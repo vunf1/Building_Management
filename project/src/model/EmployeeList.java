@@ -5,27 +5,27 @@ import exception.NonExistElement;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import model.Employee;
+import model.Funcionario;
 
 public class EmployeeList implements Serializable {
 
-    private ArrayList<Employee> employees;
+    private ArrayList<Funcionario> employees;
 
     public EmployeeList() {
         employees = new ArrayList<>();
     }
 
-    private Employee getEmployeeByNumber(long number){
-        for (int i = 0; i < employees.size(); i++) {
+    private Funcionario getEmployeeByNumber(long number){
+        /*for (int i = 0; i < employees.size(); i++) {
             Employee p = employees.get(i);
             if (p.getNumberEmployee() == number) {
                 return p;
             }
-        }
+        }*/
         return null;
     }
-    public boolean insert(Employee employee){
-        Employee p = getEmployeeByNumber(employee.getNumberEmployee());
+   /* public boolean insert(Employee employee){
+        //Funcionario p = getEmployeeByNumber(employee.getNumberEmployee());
         if (p== null) {
             return employees.add(employee);
         }else{
@@ -61,13 +61,13 @@ public class EmployeeList implements Serializable {
     }
     public ArrayList<Employee> getAll() {
         return (ArrayList<Employee>) employees.clone();
-    }
+    }*/
     public ArrayList<Person> getNOldestPeople(int n) {
         boolean flag;
         ArrayList<Person> lista = new ArrayList<>();
         if (n <= 0) {
             return lista;
-        }
+        }/*
         for(Person person: employees){
             flag = false;
             for (int i = 0; i < lista.size(); i++){
@@ -80,7 +80,7 @@ public class EmployeeList implements Serializable {
             if(flag == false){
                 lista.add(person);
             }
-        }
+        }*/
 
         for (int i = lista.size() - 1; i > n - 1; i--) {
             lista.remove(i);
@@ -95,11 +95,11 @@ public class EmployeeList implements Serializable {
             return lista;
         }
 
-        for(Person person: employees){
+       /* for(Person person: employees){
             if(person.getNome().toLowerCase().contains(query.toLowerCase())){
                 lista.add(person);
             }
-        }
+        }*/
         return lista;
     }
 }

@@ -1,5 +1,7 @@
 import controllers.Controller;
+import controllers.DatabaseController;
 import mock.MockData;
+import model.DatabaseManager;
 import repository.FilesOperation;
 import model.Company;
 import views.CompanyView;
@@ -11,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         GeneralView.writeText( "Inicializando aplicação de Gestão de Empresas...");
         Company company = null;
-        int option = GeneralView.loadMenu();
-        switch (option){
+        //int option = GeneralView.loadMenu();
+        /*switch (option){
             case 1:
                 company = CompanyView.createCompany();
                 break;
@@ -28,16 +30,21 @@ public class Main {
                 MockData mock = new MockData();
                 mock.generateData(company);
                 break;
+            case 0:
+                System.out.println("Exiting");
+                break;
             default:
                 GeneralView.writeText("Not an option");
-        }
+        }*/
 
-        if (company != null){
+        /*if (company != null){
             Controller controller = new Controller(company);
             controller.run();
         }
 
-        FilesOperation.guardarDados(company);
+        FilesOperation.guardarDados(company);*/
+        DatabaseController db = new DatabaseController();
+        db.main();
     }
 
 

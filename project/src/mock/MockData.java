@@ -1,7 +1,7 @@
 package mock;
 
 import model.Company;
-import model.Employee;
+import model.Funcionario;
 import model.Data;
 import model.EmployeeList;
 
@@ -10,7 +10,13 @@ import java.util.Random;
 public class MockData {
 
     private int FUNC_NR = 5;
-    private String[] initial_employees_names = {"Funcionario A","Funcionario B","Funcionario C","Funcionario D","Funcionario E","Funcionario F"};
+    private String[] initial_employees_names = {
+            "Funcionario A",
+            "Funcionario B",
+            "Funcionario C",
+            "Funcionario D",
+            "Funcionario E",
+            "Funcionario F"};
     private long[] initial_employees_codes = {1111,2222,3333,4444,5555,6666};
 
     private Data genDate(){
@@ -27,9 +33,10 @@ public class MockData {
         for (int  i = 0; i < this.initial_employees_names.length;i++){
             try{
                 Data dt = genDate();
-                Employee employee = new Employee(this.initial_employees_names[i],dt, this.initial_employees_codes[i]);
+                /*Employee employee = new Employee(this.initial_employees_names[i],dt,
+                        this.initial_employees_codes[i]);
                 employees = company.getEmployeeList();
-                employees.insert(employee);
+                employees.insert(employee);*/
             }catch(Exception e){
                 System.out.println(e.getMessage());
             }
