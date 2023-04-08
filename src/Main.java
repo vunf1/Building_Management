@@ -11,38 +11,38 @@ import model.Contact;
 public class Main {
 
     public static void main(String[] args) {
-        GeneralView.writeText( "Inicializando aplicação de Gestão de Empresas...");
+        /*GeneralView.writeText( "Inicializando aplicação de Gestão de Empresas...");
         Company company = null;
-        //int option = GeneralView.loadMenu();
-        /*switch (option){
+        int option = GeneralView.loadMenu();
+        switch (option){ // Create New - Scratch
             case 1:
                 company = CompanyView.createCompany();
                 break;
-            case 2:
-                company = FilesOperation.carregarDados();
-                System.out.println(company.getNome());
-                System.out.println(company.getContact());
+            case 2: // Load Empresa
+                //company = FilesOperation.carregarDados();
+                //System.out.println(company.getNome());
+                //System.out.println(company.getContact());
                 break;
-            case 3:
+            case 3: // Gerar Empresa Generica
                 System.out.println("MOCK");
-                Contact contacto = new Contact(999999999);
-                company = new Company("ABCD",contacto);
                 MockData mock = new MockData();
-                mock.generateData(company);
+                break;
+            case 4:
+                System.out.println("Exiting");
                 break;
             case 0:
                 System.out.println("Exiting");
                 break;
             default:
                 GeneralView.writeText("Not an option");
-        }*/
-
-        /*if (company != null){
-            Controller controller = new Controller(company);
-            controller.run();
         }
 
-        FilesOperation.guardarDados(company);*/
+        if (company != null){
+            Controller controller = new Controller(company);
+            controller.run();
+        }*/
+
+        //FilesOperation.guardarDados(company);
         DatabaseController db = new DatabaseController();
         db.main();
     }

@@ -19,15 +19,15 @@ public class Controller {
             op = GeneralView.generalMenu();
             switch (op) {
                 case 1:
-                    runCompany(model);
+                    //runCompany(model);
                     //CompanyView.mainCompany(model);
                     break;
                 case 2:
-                    runPeople(model);
+                    //runPeople(model);
                     //PersonView.mainPeople(model);
                     break;
                 case 5:
-                    runStatistics(model);
+                    //runStatistics(model);
                     //StatisticsView.mainStatistics(model);
                     break;
                 default:
@@ -37,6 +37,10 @@ public class Controller {
         } while (op != 0);
 
     }
+    private void createCompany(Company company) {
+
+    }
+
 
     private void runCompany(Company company) {
         int op;
@@ -69,7 +73,7 @@ public class Controller {
                     GeneralView.writeText("Volta para o menu anterior.");
                     break;
                 case 1:
-                    EmployeeView.mainEmployee(company);
+                    //EmployeeView.mainEmployee(company);
                     break;
                 case 2:
                     //mainMoradores(condominium);
@@ -92,14 +96,14 @@ public class Controller {
                     break;
                 case 1:
                     GeneralView.writeText("Os 5 funcionarios mais velhos");
-                    ArrayList<Person> olderPeopleList = company.getEmployeeList().getNOldestPeople(5);
-                    PersonView.printPeople(olderPeopleList);
+                    //ArrayList<Person> olderPeopleList = company.getEmployeeList().getNOldestPeople(5);
+                    //PersonView.printPeople(olderPeopleList);
                     break;
                 case 2:
                     GeneralView.writeText("Procurar funcionario por nome");
                     String query = GeneralView.getText("Introduza parte do nome");
-                    ArrayList<Person> foundPeopleList = company.getEmployeeList().searchByName(query);
-                    PersonView.printPeople(foundPeopleList);
+                    //ArrayList<Person> foundPeopleList = company.getEmployeeList().searchByName(query);
+                    //PersonView.printPeople(foundPeopleList);
                     break;
                 default:
                     GeneralView.writeText("Opção Errada");

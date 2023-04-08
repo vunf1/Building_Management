@@ -1,5 +1,7 @@
 package views;
 
+import Helpers.Helper;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -46,7 +48,7 @@ public class GeneralView {
         return text;
     }
     public static void writeText(String text) {
-        System.out.print(text);
+        Helper.white(text);
     }
 
     public static int loadMenu() {
@@ -56,8 +58,9 @@ public class GeneralView {
             System.out.println("1 - Criar Empresa");
             System.out.println("2 - Carregar Empresa da base de dados");
             System.out.println("3 - Criar empresa Generica");
+            System.out.println("4 - Sair");
             op = (int) GeneralView.getNumber("Indique a opcao");
-        } while (op < 1 || op > 3);
+        } while (op < 1 || op > 4);
         return op;
     }
 

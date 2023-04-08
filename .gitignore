@@ -1,6 +1,6 @@
 # Compiled class file
 *.class
-
+src\
 # Log file
 *.log
 
@@ -23,5 +23,14 @@
 hs_err_pid*
 replay_pid*
 out
+out/
+target/
 .idea
+.idea/
+*.iml
+*.ipr
+*.iws
+~/.m2/
+~/.gradle/
 mysql-connector-j-8.0.30.jar
+.git

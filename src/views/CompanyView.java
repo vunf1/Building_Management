@@ -1,7 +1,14 @@
 package views;
 
+import Helpers.Helper;
+import exception.DataInvalidaException;
 import model.Company;
 import model.Contact;
+import model.DatabaseManager;
+
+import java.sql.SQLException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class CompanyView {
 
@@ -18,7 +25,7 @@ public class CompanyView {
     }
 
     public static Company changeCompany(Company original) {
-        String nome;
+        /*String nome;
         boolean flag;
         do{
             try {
@@ -36,14 +43,49 @@ public class CompanyView {
                 flag = true;
                 System.out.println("Atenção: " + e.getMessage());
             }
-        } while (flag);
+        } while (flag);*/
         return null;
     }
 
     public static Company createCompany() {
-        String nome = GeneralView.getText("Digite o nome da Empresa");
-        Contact contact = ContactView.getContact();
-        Company company = new Company(nome, contact);
-        return company;
+        Helper.blue("Insert data for new company:");
+        int id = Helper.generateRandomNumber4Digits(0);
+        Helper.white("ID: ");Helper.red(" ->"+id);
+        Scanner scanner = new Scanner(System.in);
+
+        Helper.blue("Name: ");
+        String nome = scanner.nextLine();
+
+        Helper.blue("Address: ");
+        String address = scanner.nextLine();
+
+        Helper.blue("Contact: ");
+        int contact = 0;
+        while (contact == 0) {
+            try {
+                contact = new Contact(scanner.nextInt()).getContact();
+
+            } catch (InputMismatchException e) {
+                Helper.red("Invalid input. Please enter a number: ");
+                scanner.nextLine(); // consume the invalid input
+            } catch (DataInvalidaException e) {
+                Helper.red("Invalid input. Please enter a number: ");
+                scanner.nextLine(); // consume the invalid input
+            }
+        }
+        scanner.nextLine(); // consume the newline character after the input
+
+
+        Helper.blue("Email: ");
+        String email = scanner.nextLine();
+
+        Company company = new Company(id, nome, address, contact,email);
+        //try {
+            Helper.purple("CREATING COMPANY MOCK");
+            //company.create(new DatabaseManager(null).getConnection());
+        //} catch (SQLException e) {
+            //Helper.red(e.getMessage());
+        //}
+        return null;
     }
 }

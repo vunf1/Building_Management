@@ -60,7 +60,7 @@ public class EmployeeView {
                     }
                     break;
                 case 3:
-                    employees = company.getEmployeeList();
+                   //employees = company.getEmployeeList();
                     //ArrayList<Funcionario> list = employees.getAll();
                     //printListEmployees(list);
                     break;
