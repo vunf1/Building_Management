@@ -3,6 +3,8 @@ package model;
 import exception.DataInvalidaException;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.util.Calendar;
 
 public class Data implements Serializable {
     private int dia;
@@ -27,6 +29,21 @@ public class Data implements Serializable {
 
     public int getAno() {
         return ano;
+    }
+    public  void setDatafromDate(String date) {
+        // Create a Calendar object and set it to the parsed date
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(java.sql.Date.valueOf(date));
+
+        // Get the day, month, and year integers from the Calendar object
+        int dia = calendar.get(Calendar.DAY_OF_MONTH);
+        int mes = calendar.get(Calendar.MONTH) + 1; // Note: January is month 0
+        int ano = calendar.get(Calendar.YEAR);
+        setData(dia, mes,ano);
+    }
+
+    public Date getData() {
+        return Date.valueOf(dia+"/"+mes+"/"+ano);
     }
 
     public void setData(int dia, int mes, int ano) {

@@ -24,50 +24,54 @@ public class EmployeeList implements Serializable {
         }*/
         return null;
     }
-   /* public boolean insert(Employee employee){
-        //Funcionario p = getEmployeeByNumber(employee.getNumberEmployee());
+   public boolean insert(Funcionario employee){
+        /*Funcionario p = getEmployeeByNumber(employee.getNumberEmployee());
         if (p== null) {
             return employees.add(employee);
         }else{
             throw new EmployeeDuplicatedNumberException(employee.getNumberEmployee()+"");
-        }
+        }*/
+       return false;
     }
-    public Employee remove(long number){
-        Employee p = getEmployeeByNumber(number);
+    public Funcionario remove(long number){
+        /*Employee p = getEmployeeByNumber(number);
         if (p != null) {
             employees.remove(p);
             return p;
         }else{
             throw new NonExistElement(number+"");
-        }
+        }*/
+        return null;
     }
-    public void change(long number, Employee employee){
-        Employee p = getEmployeeByNumber(number);
+    public void change(long number, Funcionario employee){
+        /*Employee p = getEmployeeByNumber(number);
         if (p != null) {
             p.setNome(employee.getNome());
             p.setNascimento(employee.getNascimento());
             p.setNumberEmployee(employee.getNumberEmployee());
         }else{
             throw new NonExistElement(number+"");
-        }
+        }*/
     }
-    public Employee get(long number) {
-        Employee p = getEmployeeByNumber(number);
+    public Funcionario get(long number) {
+        /*Employee p = getEmployeeByNumber(number);
         if (p != null) {
             return p;
         }else{
             throw new NonExistElement(number +"");
-        }
+        }*/
+        return null;
     }
-    public ArrayList<Employee> getAll() {
-        return (ArrayList<Employee>) employees.clone();
-    }*/
+    public ArrayList<Funcionario> getAll() {
+        //return (ArrayList<Employee>) employees.clone();
+        return null;
+    }
     public ArrayList<Person> getNOldestPeople(int n) {
-        boolean flag;
+        /*boolean flag;
         ArrayList<Person> lista = new ArrayList<>();
         if (n <= 0) {
             return lista;
-        }/*
+        }
         for(Person person: employees){
             flag = false;
             for (int i = 0; i < lista.size(); i++){
@@ -80,26 +84,27 @@ public class EmployeeList implements Serializable {
             if(flag == false){
                 lista.add(person);
             }
-        }*/
+        }
 
         for (int i = lista.size() - 1; i > n - 1; i--) {
             lista.remove(i);
         }
 
-        return lista;
+        return lista;*/
+        return null;
     }
 
-    public ArrayList<Person> searchByName(String query) {
-        ArrayList<Person> lista = new ArrayList<>();
+    public ArrayList<Funcionario> searchByName(String query) {
+        /*ArrayList<Person> lista = new ArrayList<>();
         if (employees.size() < 1) {
             return lista;
         }
-
-       /* for(Person person: employees){
+         for(Person person: employees){
             if(person.getNome().toLowerCase().contains(query.toLowerCase())){
                 lista.add(person);
             }
-        }*/
-        return lista;
+        }
+        return lista;*/
+        return null;
     }
 }
